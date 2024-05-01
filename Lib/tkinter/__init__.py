@@ -4667,3 +4667,46 @@ __all__ = [name for name, obj in globals().items()
 
 if __name__ == '__main__':
     _test()
+import tkinter as tk
+
+def boton1_clic():
+    texto.set("Botón 1 presionado")
+
+def boton2_clic():
+    texto.set("Botón 2 presionado")
+
+root = tk.Tk()
+root.title("Ejercicio Semana 12")
+
+# Título centrado
+titulo_label = tk.Label(root, text="Título ejercicio semana 12", font=("Arial", 16))
+titulo_label.pack()
+
+# Cuadro de texto sobre la historia de la PC centrado
+historia_texto = """
+Aquí va el texto sobre la historia de la PC.
+Puedes escribirlo directamente o cargarlo desde un archivo.
+"""
+historia_label = tk.Label(root, text=historia_texto, justify="center", wraplength=400)
+historia_label.pack()
+
+# Cuadro de texto para mostrar mensajes
+texto = tk.StringVar()
+texto_label = tk.Label(root, textvariable=texto)
+texto_label.pack()
+
+# Botones
+boton1 = tk.Button(root, text="Botón 1", command=boton1_clic)
+boton1.pack(side="left")
+boton2 = tk.Button(root, text="Botón 2", command=boton2_clic)
+boton2.pack(side="left")
+
+# Textos a la par de los botones
+texto1_label = tk.Label(root, text="Texto 1")
+texto1_label.pack(side="left")
+texto2_label = tk.Label(root, text="Texto 2")
+texto2_label.pack(side="left")
+texto3_label = tk.Label(root, text="Texto 3")
+texto3_label.pack(side="left")
+
+root.mainloop()
